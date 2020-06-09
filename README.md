@@ -15,7 +15,8 @@ If you're using binaries from [releases](https://github.com/Erikyy/YAYD---Yet-An
 ### Running the application
 Just use `python main.py` to run this application or download binaries from [releases](https://github.com/Erikyy/YAYD---Yet-Another-YouTube-Downloader/releases)
 
-
+## Contributing
+Feel free to contribute to this project
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
