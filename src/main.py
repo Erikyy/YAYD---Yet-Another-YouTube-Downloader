@@ -31,13 +31,15 @@ def Download():
 
 
 
-scrollbar = Scrollbar(window)
-scrollbar.pack(side=RIGHT, fill= Y)
+
 
 window.title("Yet Another YouTube Downloader")
 window.geometry('800x500')
-listbox = Listbox(window, width=500, height=20, yscrollcommand = scrollbar.set, selectmode = SINGLE)
-scrollbar.config(command = listbox.yview)
+frame = Frame(window)
+listbox = Listbox(frame, width=120, height=20, selectmode = SINGLE)
+scrollbar = Scrollbar(frame)
+
+listbox.config(yscrollcommand = scrollbar.set)
 tfield = Entry(window, width=50)
 tfield.place(x=90, y=350)
 button = Button(window, text="Go", width=10, command = OnGoButtonClicked)
@@ -46,5 +48,9 @@ button.place(x=5, y=350)
 button2 = Button(window, text="Download", width=10, command = Download)
 button2.place(x=5, y=400)
 
+
+scrollbar.pack(side=RIGHT, fill= Y)
+scrollbar.config(command = listbox.yview)
+frame.pack()
 listbox.pack()
 window.mainloop()
