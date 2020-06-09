@@ -6,8 +6,8 @@ A little project that I made for downloading youtube videos
 - [ ] - Due to adaptive streaming most videos don't have audio, need to implement some kind of A/V merging(ffmpeg)
 
 ### Required libraries:
- 1.python
- 2.pytube3
+ 1. python
+ 2. pytube3
 
 If you're using binaries from [releases](https://github.com/Erikyy/YAYD---Yet-Another-YouTube-Downloader/releases), then you don't need any libraries
 
