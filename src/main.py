@@ -34,7 +34,7 @@ def Download():
 #    print("{:00.0f}% downloaded".format(percent))
 
 #Need to get file size from list[item]
-#AttributeError: 'list' object has no attribute 'filesize'
+#Right now I couldn't get it to work
 
 window.title("Yet Another YouTube Downloader")
 window.geometry('800x500')
