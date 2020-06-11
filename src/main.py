@@ -8,30 +8,34 @@ import sys
 window = Tk()
 
 
-global yt
-global listbox
 
+def YT():
 
-
+    YT.url = tfield.get()
+    YT.yt = YouTube(YT.url)#, on_progress_callback=download_progress)
+    YT.list = YT.yt.streams
+#    YT.filesize = YT.yt.streams.first().filesize
 def OnGoButtonClicked():
+    YT()
+
     listbox.delete(0, 'end')
-    url = tfield.get()
-    yt = YouTube(url)
-    global list
-    list = yt.streams.all()
-    for x in list:
+    for x in YT.list:
         listbox.insert('end', x)
+
 
 def Download():
     selected = listbox.curselection()
-    print(selected)
+    global item
     for item in selected:
-        list[item].download()
+        YT.list[item].download()
 
+#def download_progress(stream=None, chunk=None, file_handle=None, remaining=None):
+#    YT()
+#    percent =(100*(YT.filesize))/YT.filesize
+#    print("{:00.0f}% downloaded".format(percent))
 
-
-
-
+#Need to get file size from list[item]
+#AttributeError: 'list' object has no attribute 'filesize'
 
 window.title("Yet Another YouTube Downloader")
 window.geometry('800x500')
@@ -51,6 +55,9 @@ button2.place(x=5, y=400)
 
 scrollbar.pack(side=RIGHT, fill= Y)
 scrollbar.config(command = listbox.yview)
+
+
+
 frame.pack()
 listbox.pack()
 window.mainloop()
