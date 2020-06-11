@@ -25,7 +25,6 @@ def OnGoButtonClicked():
 
 def Download():
     selected = listbox.curselection()
-    global item
     for item in selected:
         YT.list[item].download()
 
